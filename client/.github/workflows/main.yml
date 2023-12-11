@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Change to client directory
+        run: cd client
+        
       - name: Checkout repo
         uses: actions/checkout@v2
 
@@ -21,9 +24,6 @@ jobs:
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
-
-      - name: Change to client directory
-        run: cd client
 
       - name: Build project
         run: npm run build
